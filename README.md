@@ -8,6 +8,10 @@ to use the script make the video name video.mp4, copy-paste chapters and titles 
 00:05 First subject
 
 
+...
+
+1:20:00 Last subject
+
 etc..
 
 then run the script in the same folder as both files
