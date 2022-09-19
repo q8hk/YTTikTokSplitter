@@ -1,3 +1,4 @@
+from curses.ascii import isdigit, isspace
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 import csv
 import os
@@ -27,6 +28,11 @@ with open("chapters.txt", 'r', encoding="utf8") as r, open('chapters_new.txt', '
         if line.strip():
             if line[0].isdigit():
                 o.write(line.strip()+"\n")
+            elif line[0].isspace():
+                while line[0].isspace():
+                    line = line[1:]
+                if line[0].isdigit():
+                    o.write(line.strip()+"\n")
 file1 = open('chapters_new.txt', 'r', encoding="utf8")
 Lines = file1.readlines()
 # print(Lines)
@@ -89,3 +95,5 @@ for timestamp in timestamps:
     # end = get_sec(end)
 
     #ffmpeg_extract_subclip(file_name, start, end, targetname=out_file)
+if os.path.exists("chapters_new.txt"):
+  os.remove("chapters_new.txt")
