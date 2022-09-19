@@ -16,6 +16,6 @@ etc..
 
 then run the script in the same folder as both files
 
-output should be the format of video files:
+output should be video files:
 
 "0 Intro.mp4", "1 First subject.mp4", etc..
